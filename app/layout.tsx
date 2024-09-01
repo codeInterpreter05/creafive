@@ -8,7 +8,7 @@ import {
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Creafive",
+  title: "CreaFive",
   description: "A SaaS AI platftorm",
 };
 
@@ -19,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
+      <head>
+        <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
+      </head>
         <html lang="en">
           <body className={inter.className}>{children}</body>
       </html>
