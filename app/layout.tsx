@@ -22,7 +22,7 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
       </head>
-        <html lang="en">
+        <html lang="en" className="custom-scrollbar">
           <body className={inter.className}>{children}</body>
       </html>
     </ClerkProvider>
