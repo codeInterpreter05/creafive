@@ -25,7 +25,7 @@ const CodePage = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      prompt: "",
+      prompt: ""
     },
   });
 
@@ -48,8 +48,6 @@ const CodePage = () => {
         ...current,
         { role: "assistant", content: response.data.message },
       ]);
-
-      console.log(response.data.message);
   
       form.reset();
     } catch (error: any) {
@@ -109,7 +107,7 @@ const CodePage = () => {
             </div>
           )}
           {messages.length === 0 && !isLoading && (
-            <Empty label="Start conversation with CreaFive" />
+            <Empty label="Start coding with CreaFive" />
           )}
           <div className="flex flex-col-reverse gap-y-4">
             {messages.slice().reverse().map((message, index) => (
@@ -133,7 +131,7 @@ const CodePage = () => {
                     className="text-sm leading-7 overflow-hidden"
                   >
                     
-                    {message.role !== "user" ? message.content.slice(3) || "" : message.content}
+                    {message.role !== "user" ? message.content.slice(3, message.content.length - 3) || "" : message.content}
                   </ReactMarkdown>
                 </div>
               </div>
